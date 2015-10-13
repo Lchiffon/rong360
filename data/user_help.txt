@@ -1,0 +1,12 @@
+user_id：用户id     
+pv：总pv
+pv_index_loan：贷款首页PV   
+pv_apply_total：申请次数
+pv_ask：问答页PV
+pv_calculator：计算器页PV
+order_count_loan：贷款下单量
+pv_daikuan：贷款总PV
+pv_credit：信用卡总PV
+pv_search_daikuan：搜索页PV
+pv_detail_daikuan：贷款详情页PV
+date：不同日期，值越大代表离当前越近

@@ -1,0 +1,6 @@
+user_id：用户id
+product_id：产品id
+date：不同日期，值越大代表离当前越近
+term：申请期限
+limit：申请金额
+result：0代表贷款申请没有被批准，1代表贷款申请获得批准
