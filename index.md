@@ -67,14 +67,6 @@ strong{
 
 
 
----
-## OUTLINES
-
-- 背景
-- 分析流程
-- 效果评估
-- 其他问题
-
 
 ---
 ## Intro.
@@ -135,6 +127,19 @@ strong{
 	+ 用户浏览记录数据
 	+ 24W
 
+
+
+
+
+***
+## 提供的字段:
+
+- 用户: 学历,职业,财产,收入,公积金,征信,房,车..
+- 产品: 额度,银行,城市,申请人数,是否需要房/车/本地户口...
+- 用户浏览记录: 不同页面的pv,申请次数等..
+
+
+
 ***
 ## 训练与测试数据
 - `order_train.txt`(labeled)
@@ -145,12 +150,7 @@ strong{
 - 以F1值作为评价标准,每天三次提交机会
 	+ $F_1 = 2\frac{precision*recall}{precision+recall}$
 
-***
-## 提供的字段:
 
-- 用户: 学历,职业,财产,收入,公积金,征信,房,车..
-- 产品: 额度,银行,城市,申请人数,是否需要房/车/本地户口...
-- 用户浏览记录: 不同页面的pv,申请次数等..
 
 ***
 ## 清理步骤
@@ -245,7 +245,43 @@ writeLines(as.character(out), "submit/3.26.1.txt") # 0.2985
 - 通过比例
 	+ 训练集20%
 	+ 测试集10%
+
+***
+## 准确与召回
+![pre](pic/pre.png)
+
+***
+## F1-Score
+
+![f1](pic/f1.png)
+
+
+***
+![f1](pic/f11.png)
+- Model 1: $Predict \geq 0.3,\hat{y}=1$ 
+
+	>- $precision=0.57, \qquad recall=1.0$
+	>- $F1 = 0.72$
+
+***
+![f1](pic/f12.png)
+- Model 1: $Predict \geq 0.3,F1= 0.72$
 	
+- Model 2: $Predict \geq 0.8,\hat{y}=1$ 
+
+	>- $precision=1, \qquad recall=0.5$
+	>- $F1 = 0.67$
+
+***
+![f1](pic/f13.png)
+- Model 1: $Predict \geq 0.3,F1 = 0.72$
+	
+- Model 2: $Predict \geq 0.8,F1 = 0.67$
+
+- Model 3: $Predict \geq 0.6,\hat{y}=1$ 
+
+	>- $precision=0.75, \qquad recall=0.75$
+	>- $F1 = 0.75$
 	
 ***
 ### 离线测试方案
@@ -272,6 +308,8 @@ writeLines(as.character(out), "submit/3.26.1.txt") # 0.2985
 [codes](code.r)
 
 [文档](rong360.docx)
+
+[Github](http://github.com/Lchiffon/rong360)
 
 [七风阁](http://chiffon.gitcafe.io)
 <script>
